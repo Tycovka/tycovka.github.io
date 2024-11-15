@@ -1,4 +1,4 @@
-# Сайт Гипсолит
+# Demo
 Задание
 
-[Гипсолит](https://tycovka.github.io/public/ "Перейти")
+[Demo](https://tycovka.github.io/public/ "Перейти")
