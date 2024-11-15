@@ -1,4 +1,4 @@
 # Demo
 Задание
 
-[Demo](https://tycovka.github.io/public/ "Перейти")
+[Demo](https://tycovka.github.io/public/index.php "Перейти")
