@@ -1,0 +1,33 @@
+CREATE DATABASE apple_store;
+
+USE apple_store;
+
+-- Таблица пользователей
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    full_name VARCHAR(255) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    login VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('user', 'admin') DEFAULT 'user',  -- Роль: 'user' или 'admin'
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+-- Таблица сортов яблок
+CREATE TABLE apple_varieties (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) UNIQUE NOT NULL
+);
+
+-- Таблица заказов
+CREATE TABLE orders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    apple_variety_id INT,
+    quantity INT NOT NULL,
+    status ENUM('new', 'confirmed', 'rejected') DEFAULT 'new',
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (apple_variety_id) REFERENCES apple_varieties(id)
+);
